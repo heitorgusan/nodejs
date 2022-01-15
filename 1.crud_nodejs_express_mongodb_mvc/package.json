@@ -1,0 +1,38 @@
+{
+  "name": "lapizzaland",
+  "version": "1.0.0",
+  "description": "my first real project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "crud_nodejs_express_mongodb"
+  },
+  "keywords": [
+    "crud",
+    "mongodb",
+    "express",
+    "nodejs"
+  ],
+  "author": "heitorgusan",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "helmet": "^5.0.1",
+    "mongoose": "^6.1.5",
+    "path": "^0.12.7",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

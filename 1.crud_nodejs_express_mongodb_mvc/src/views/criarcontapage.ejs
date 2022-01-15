@@ -1,0 +1,30 @@
+<%-include('includes/header');%>
+        <div class="container col-xl-10 col-xxl-8 px-1 py-1">
+            <%-include('includes/flashmessages')%>
+            <div class="row align-items-center g-lg-5 py-3">
+
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form action="/postcriarconta" method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
+                        <h3 class="text-center mb-4">Faça seu cadastro abaixo</h3>
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="senha" class="form-control" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Senha</label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Criar nova conta</button>
+                        <div class="text-center mt-4">
+
+                            <h5>Já tem cadastro?</h5>
+                            <a href="/" class="text-center">Clique aqui para fazer login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<%-include('includes/footer');%>

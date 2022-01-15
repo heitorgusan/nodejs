@@ -1,0 +1,56 @@
+<%if(user){%>
+<%-include('includes/header');%>
+<%-include('includes/nav');%>    
+<div class="container col-xl-13 col-xxl-8 px-1 py-1">
+    <%-include('includes/flashmessages')%>
+    <div class="row align-items-center g-lg-5 py-3">
+        <div class="col-md-10 mx-auto col-lg-5">
+        <%if(!clienteProcurado._id){%>
+            <form action="/postcriarclientes" method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
+        <%}else{%>
+            <form action="/criarclientes/<%=clienteProcurado._id%>" method="POST" class="p-4 p-md-5 border rounded-3 bg-light">
+        <%}%>
+                <h3 class="text-center mb-4">Cadastre o cliente abaixo</h3>
+                <div class="form-floating mb-3">
+                    <input type="text" value = "<%= clienteProcurado.nome %>" name="nome"  class="form-control" id="floatingInput" placeholder="Nome do seu cliente" >
+                    <label for="floatingInput">Nome</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="cep" class="form-control" id="floatingPassword" placeholder="CEP do cliente" value = <%=clienteProcurado.cep%>>
+                    <label for="floatingPassword">CEP</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="logradouro" class="form-control" id="floatingPassword" placeholder="Logradouro do cliente" value = <%=clienteProcurado.logradouro%>>
+                    <label for="floatingPassword">Rua</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="numero" class="form-control" id="floatingPassword" placeholder="Numero do cliente">
+                    <label for="floatingPassword">Numero</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="complemento" class="form-control" id="floatingPassword" placeholder="Complemento do cliente" value = <%=clienteProcurado.complemento%>>
+                    <label for="floatingPassword">Complemento</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="bairro" class="form-control" id="floatingPassword" placeholder="Bairro do cliente" value = <%=clienteProcurado.bairro%>>
+                    <label for="floatingPassword">Bairro</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="cidade" class="form-control" id="floatingPassword" placeholder="Cidade do cliente" value = <%=clienteProcurado.cidade%>>
+                    <label for="floatingPassword">Cidade</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="estado" class="form-control" id="floatingPassword" placeholder="Estado do cliente" value = <%=clienteProcurado.estado%>>
+                    <label for="floatingPassword">Estado</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%}else{%>
+    <h1>Nao achei</h1>
+<%}%>
+
+<%-include('includes/footer');%>

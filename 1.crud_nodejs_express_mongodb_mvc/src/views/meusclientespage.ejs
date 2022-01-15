@@ -1,0 +1,36 @@
+<%- include('includes/header');%>
+<%- include('includes/nav');%>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-2"></div>
+            <div class = "col-lg-8 my-3">
+                <h1 class = "text-center">Meus Clientes</h1>
+                <p class = "text-center lead">Seus clientes estão abaixo</p>                
+                <%- include ('includes/flashmessages') %>
+                <div class = "responsive-table">
+                    <table class = "table my-3">
+                        <%if(clientes.length>0)  {%>
+                        <%clientes.forEach(cli=>{ %>
+                            <tr>
+                                <td><%=cli.nome%></td>
+                                <td><%=cli.sobrenome%></td>
+                                <td><%=cli.email%></td>
+                                <td><%=cli.telefone%></td>
+                                <td><a href="/criarclientes/<%=cli._id%>">Editar</a></td>
+                                <td><a href="/criarclientes/delete/<%=cli._id%>" class ="text-danger">Excluir</a></td>
+                                
+                            </tr>
+                        <% })%>
+                        <%}else { %>
+                            <p class = "text-center lead">Não existem clientes cadastrados</p>
+                        <%}%>
+                    </table>
+                </div>
+            </div>
+
+
+
+            <div class = "col-lg-2"></div>
+        </div>
+    </div>
+<%- include('includes/footer');%>
